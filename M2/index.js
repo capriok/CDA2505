@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBqX9mB4G8Mtnc-oVIrb_2DSnf681_SuSw'
+const API_KEY = 'AIzaSyAaoOIs6BIXaCQmYzhG6OVjQTsZTZHNHuI'
 
 $('form').submit(e => executeSearch(e))
 
@@ -12,20 +12,25 @@ function loadClient() {
 		)
 }
 
+const getSearchValue = () => $('.search-input').val()
+const getCountValue = () => $('.search-count').val()
+
 
 function executeSearch(e) {
 	e.preventDefault()
-	const searchValue = $('.search-input').val();
-	const searchCount = $('.search-count').val();
+	const searchValue = getSearchValue();
+	const searchCount = getCountValue();
 
 	if (!searchValue) return alert('Enter a Search Value.')
 	if (!searchCount) $('.search-count').val('3')
+
+	console.log(searchCount);
 
 	var config = {
 		"part": 'snippet',
 		"type": 'video',
 		"q": searchValue,
-		"maxResults": parseInt(searchCount)
+		"maxResults": parseInt(getCountValue())
 	};
 
 	return gapi.client.youtube.search.list(config)
