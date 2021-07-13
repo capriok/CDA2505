@@ -25,6 +25,9 @@ form input {
 	border-radius: 5px;
 	border: 1px solid grey;
 }
+form .search-count {
+	max-width: 75px;
+}
 form button {
 	min-width: 100px;
 	padding: 5px 20px;
@@ -42,8 +45,6 @@ form button {
 .result h3 {
 	border-bottom: 2px solid steelblue;
 	padding-bottom: 10px;
-}
-.result p {
 }
 .result img {
 	max-width: 250px;
