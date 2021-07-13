@@ -1,11 +1,11 @@
-const API_KEY = 'AIzaSyABrflUqxpm5O8mhDLBmDwmMilfUEKen6A'
+const API_KEY = 'AIzaSyBqX9mB4G8Mtnc-oVIrb_2DSnf681_SuSw'
 
 $('form').submit(e => executeSearch(e))
 
 gapi.load("client", loadClient);
 
 function loadClient() {
-	gapi.client.setApiKey('AIzaSyABrflUqxpm5O8mhDLBmDwmMilfUEKen6A');
+	gapi.client.setApiKey(API_KEY);
 	return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
 		.then(() => console.log("GAPI client Ready"),
 			(err) => console.error("GAPI Client Error", err)
