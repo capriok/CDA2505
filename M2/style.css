@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+main {
+	width: 500px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+}
+form input {
+	flex: 1;
+	padding-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: 1px solid grey;
+}
+form button {
+	min-width: 100px;
+	padding: 5px 20px;
+}
+
+.result {
+	border-radius: 10px;
+	border: 1px solid rgba(4, 40, 87, 0.4);
+	box-shadow: 2px 2px 20px -10px black;
+	padding: 20px;
+	padding-top: 0;
+	margin-bottom: 20px;
+}
+
+.result h3 {
+	border-bottom: 2px solid steelblue;
+	padding-bottom: 10px;
+}
+.result p {
+}
+.result img {
+	max-width: 250px;
+}
