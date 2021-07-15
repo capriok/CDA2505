@@ -12,7 +12,7 @@ body {
 
 :root {
 	--main: rgb(180, 0, 36);
-	--off-white: rgb(240, 240, 240);
+	--off-white: rgba(201, 201, 201, 0.3);
 }
 
 button,

@@ -2,44 +2,29 @@ const API_KEY = 'AIzaSyAaoOIs6BIXaCQmYzhG6OVjQTsZTZHNHuI'
 
 $('form').submit(e => executeSearch(e))
 
-gapi.load("client", loadClient);
-
-function loadClient() {
-	gapi.client.setApiKey(API_KEY);
-	return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-		.then(() => console.log("GAPI client Ready"),
-			(err) => console.error("GAPI Client Error", err)
-		)
-}
-
 const getSearchValue = () => $('.search-input').val()
 const getCountValue = () => $('.search-count').val()
 
-
-function executeSearch(e) {
+async function executeSearch(e) {
 	e.preventDefault()
 	const searchValue = getSearchValue();
 	const searchCount = getCountValue();
+	const maxResults = parseInt(getCountValue())
 
 	if (!searchValue) return alert('Enter a Search Value.')
 	if (!searchCount) $('.search-count').val('3')
 
-	console.log(searchCount);
+	const Base = 'https://www.googleapis.com/youtube/v3/search?'
+	const Type = 'type=video'
+	const Query = `&q=${searchValue}`
+	const Part = '&part=snippet'
+	const MaxResults = `&maxResults=${maxResults}`
+	const Key = `&key=${API_KEY}`
+	const URL = Base + Type + Query + Part + MaxResults + Key
 
-	var config = {
-		"part": 'snippet',
-		"type": 'video',
-		"q": searchValue,
-		"maxResults": parseInt(getCountValue())
-	};
-
-	return gapi.client.youtube.search.list(config)
-		.then((response) => {
-			const results = response.result.items;
-			RenderResults(results);
-		},
-			(err) => console.error("Execute error", err)
-		)
+	const response = await fetch(URL)
+	const data = await response.json()
+	RenderResults(data.items);
 }
 
 function RenderResults(results) {
