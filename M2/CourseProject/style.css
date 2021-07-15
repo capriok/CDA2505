@@ -54,7 +54,7 @@ input {
 .app > nav,
 .app > form,
 .app > main {
-	width: 400px;
+	width: 500px;
 }
 
 .app-title {
@@ -76,7 +76,7 @@ form input {
 	background-color: var(--off-white);
 }
 
-.note-body {
+.note-card {
 	display: flex;
 	flex-direction: column;
 	min-height: 100px;
