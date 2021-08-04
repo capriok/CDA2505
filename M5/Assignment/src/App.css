@@ -1,0 +1,115 @@
+.App {
+  --primary: rgb(240, 240, 240);
+  --second: rgb(103, 139, 175);
+
+  position: relative;
+  text-align: center;
+
+  height: 100vh;
+  margin: 0 auto;
+}
+
+main {
+  padding-top: 200px;
+  max-width: 1000px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  padding: 20px 0;
+  font-family: sans-serif;
+  border-bottom: 2px solid var(--second);
+  background-color: var(--primary);
+}
+
+.landing {
+  border-radius: 5px;
+  padding: 50px;
+  border: 2px solid var(--second);
+  background-color: var(--primary);
+}
+main,
+section,
+.questionnaire,
+.question,
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionnaire {
+  min-height: 225px;
+  max-height: 225px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--second);
+  background-color: var(--primary);
+}
+.question {
+  flex: 1;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100%;
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--second);
+  background-color: white;
+}
+.answers button {
+  cursor: pointer;
+  min-width: 200px;
+  max-width: 200px;
+  font-size: 0.9rem;
+}
+.answers button:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.quiz-result {
+  color: black !important;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: unset;
+  max-height: unset;
+  padding: 20px;
+  border: 2px solid var(--second);
+  background-color: var(--primary);
+}
+
+.quiz-result .question {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.quiz-result .answer {
+  width: 100%;
+  min-width: unset;
+  max-width: unset;
+}
+
+.quiz-result .result:not(:last-child) {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--second);
+}
+
+.quiz-result .correct {
+  color: green !important;
+  font-weight: bold;
+}
+
+.quiz-result .wrong {
+  font-weight: bold;
+  color: crimson;
+}
