@@ -34,7 +34,7 @@ form input {
 form input:focus {
   border-inline: unset;
   border-radius: 5px;
-  border-bottom: 0 solid crimson;
+  border-bottom: 2px solid transparent;
 }
 form button {
   cursor: pointer;
