@@ -4,9 +4,15 @@ import NoteItem from './NoteItem'
 const Notes = ({ notes, setNotes }) => {
 
 	function MarkNote(id) {
-		const updatedNotes = notes.map(note => {
+		const updatedNotes = notes.map((note, i) => {
 			if (note.id !== id) return note
 			note.done = true
+			return note
+		})
+		updatedNotes.map((note, i) => {
+			if (!note.done) return note
+			updatedNotes.splice(i, 1)
+			updatedNotes.unshift(note)
 			return note
 		})
 		setNotes(updatedNotes)

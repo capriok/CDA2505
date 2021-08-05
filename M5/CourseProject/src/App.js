@@ -14,7 +14,6 @@ const INITIAL_NOTES = [
 function App() {
 
   const [noteInput, setnoteInput] = useState('')
-
   const [notes, setNotes] = useState(INITIAL_NOTES)
 
   function AddNote(e) {
@@ -24,8 +23,8 @@ function App() {
 
     const uuid = short.generate()
     const newNote = { id: uuid, name: noteInput, done: false, pinned: false }
-    const updateNotes = [...notes, newNote]
-    setNotes(updateNotes)
+    const updatedNotes = [...notes, newNote]
+    setNotes(updatedNotes)
     setnoteInput('')
   }
 

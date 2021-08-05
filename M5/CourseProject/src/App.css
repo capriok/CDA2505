@@ -50,19 +50,21 @@ form button:hover {
 }
 
 .todo-item {
+  cursor: default;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 3px;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 0;
   border-inline: 2px solid crimson;
   transition: 0.2s;
 }
 
 .todo-item:hover {
   border-radius: 10px;
-  font-weight: 600;
+  border-inline: 3px solid crimson;
+  background-color: rgb(240, 240, 240);
 }
 
 .todo-item input {
